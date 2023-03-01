@@ -3,7 +3,7 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
 }
 
@@ -42,6 +42,11 @@ li {
     list-style: none;
     padding: 0 0.2rem;
     margin: 0 0.4rem;
+    cursor: pointer;
+}
+
+li:hover {
+    color: #e9ab53;
 }
 
 header > img {
@@ -74,15 +79,20 @@ main {
 
 .hero-text {
     grid-column: 3 / 5;
+    align-items: center;
 }
 
 .cta {
     margin-top: 1rem;
-    padding: 5px 25px;
-    background-color: black;
+    padding: 10px 30px;
+    background-color: hsl(5, 85%, 63%);
+    border: 0;
     color: white;
 }
 
+.cta:hover {
+    background-color: #010128;
+}
 
 /* aside */
 aside {
@@ -104,6 +114,10 @@ aside {
     font-size: 1.1rem;
 }
 
+.aside-title:hover {
+    color: #e9ab53;
+}
+
 .aside-text {
     font-size: 0.8rem;
 }
@@ -117,18 +131,34 @@ hr {
 section {
     grid-area: section;
     display: grid;
+    gap: 1rem;
+    /* grid-column: 1/ 4;
+    grid-row: 5 / 7;
+    grid-template-columns: subgrid; */
 
 }
 
+#card-one {
+    grid-column:1 ;
+}
+#card-two {
+    grid-column:2 ;
+}
+#card-three {
+    grid-column:3 ;
+}
 .section-card {
-    display: grid;    
-    grid-column: 1;
-    grid-row: 3;
+    display: flex;
     gap: 1rem;
 
 }
 
-@media screen and (max-width:390px) {
+.section-card > img {
+    width: 60px;
+    height: 100%;
+}
+
+@media screen and (max-width:440px) {
     .wrapper {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -146,4 +176,12 @@ section {
         margin: 0 auto;
         font-family: 'Inter', sans-serif;
     }
+
+    .hero-title {
+        grid-column: 1/3;
+        font-size: 1.5rem;
+        font-weight: 800;
+        line-height: 110%;
+    }
+
 }
